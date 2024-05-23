@@ -18,5 +18,5 @@ router.post("/updateLike", sellerController.updatedLike);
 router.get("/getSellerProperty/:id", sellerController.getSellerProperty);
 
 //buyer
-router.get("/getList", sellerController.getProertryList);
+router.get("/property/list", sellerController.getProertryList);
 export default router;

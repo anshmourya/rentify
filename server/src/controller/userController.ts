@@ -40,7 +40,13 @@ class UserController {
 
       res.success({
         message: "user authentication completed successfully",
-        data: newToken,
+        data: {
+          token: newToken,
+          role: checkCredential.role,
+          name: checkCredential.name,
+          id: checkCredential.id,
+          email: checkCredential.email,
+        },
       });
     } catch (error) {
       res.error(error);
