@@ -10,6 +10,18 @@ export interface userProps {
 }
 
 class User {
+  async getUserById(id: string) {
+    try {
+      const user = await UserModel.findById(id, {
+        password: 0,
+      });
+      return user;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
   async create(user: userProps) {
     try {
       const salt = await bcrypt.genSalt(10);

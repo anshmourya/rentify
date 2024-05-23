@@ -17,7 +17,7 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
     next();
   } catch (error) {
     console.error("Auth middleware error:", error);
-    next(error);
+    res.unathorized(error);
   }
 };
 
