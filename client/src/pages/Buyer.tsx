@@ -1,6 +1,7 @@
 import Spinner from "@/components/loader/Spinner";
 import PropertyList from "@/components/PropertyList";
 import useBuyer from "@/hooks/useBuyer";
+import PropertyDetail from "@/modals/PropertyDetail";
 import { useQuery } from "@tanstack/react-query";
 
 const Buyer = () => {
@@ -24,16 +25,18 @@ const Buyer = () => {
                 key={item._id}
                 className="bg-white-A700 flex flex-1 flex-col items-start justify-start my-0 py-[25px] rounded-[15px] shadow-bs w-full"
               >
-                <PropertyList
-                  className="w-full"
-                  address={item.address}
-                  price={item.price}
-                  total_like={item.total_like}
-                  seller_id={item.seller_id}
-                  number_of_bathroom={item.number_of_bathroom}
-                  number_of_bedroom={item.number_of_bedroom}
-                  description={item.description}
-                />
+                <PropertyDetail>
+                  <PropertyList
+                    className="w-full"
+                    address={item.address}
+                    price={item.price}
+                    total_like={item.total_like}
+                    seller_id={item.seller_id}
+                    number_of_bathroom={item.number_of_bathroom}
+                    number_of_bedroom={item.number_of_bedroom}
+                    description={item.description}
+                  />
+                </PropertyDetail>
               </div>
             ))}
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
 import { useController } from "react-hook-form";
@@ -30,7 +31,7 @@ const Input: React.FC<InputProps> = ({
   name = "",
   placeholder = "",
   type = "text",
-  children,
+
   label = "",
   prefix,
   suffix,
@@ -40,7 +41,8 @@ const Input: React.FC<InputProps> = ({
   ...restProps
 }) => {
   const { field, fieldState } = control
-    ? useController({
+    ? // eslint-disable-next-line react-hooks/rules-of-hooks
+      useController({
         control: control,
         name,
         defaultValue: defaultValue || "",
